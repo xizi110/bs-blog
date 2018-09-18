@@ -1,7 +1,7 @@
 # bs-blog
 
 #### 项目介绍
-个人博客
+个人博客，演示地址：[悦来](https://www.yuelai.xyz)
 
 #### 软件架构
 前台：bootstrap+jquery
