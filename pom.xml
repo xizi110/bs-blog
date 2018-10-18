@@ -186,19 +186,19 @@
 		<dependency>			
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-core</artifactId>
-			<version>5.3.1</version>		
+			<version>7.1.0</version>		
 		</dependency>
 		<!-- 查询解析器 -->
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-queryparser</artifactId>
-			<version>5.3.1</version>
+			<version>7.1.0</version>
 		</dependency>
 		<!-- 分析器 -->
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-analyzers-common</artifactId>
-			<version>5.3.1</version>
+			<version>7.1.0</version>
 		</dependency>
 		<!-- 很明显，这个是查询被检索文件为全中文的情况下，加上以上的三个，再加上这两个就行了。值得提一下，“高亮显示”的jar包可加可不加，在这里面加上，是因为这个在后面会用到。但是还是建议大家把这个加上，懂得多也不是个错。-->		
 		<!-- 中文分词查询器smartcn -->
