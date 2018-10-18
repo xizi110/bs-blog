@@ -10,7 +10,7 @@
 
 		<!-- 系统打印日志 ,按照天记录日志;filePattern文件的格式-->
 		<RollingRandomAccessFile name="System"
-			fileName="logs/system.log" filePattern="logs/system_%d{yyyy-MM-dd}_%i.log">
+			fileName="/logs/system.log" filePattern="logs/system_%d{yyyy-MM-dd}_%i.log">
 			<!-- 日志文件中内容的格式 -->
 			<PatternLayout
 				pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />

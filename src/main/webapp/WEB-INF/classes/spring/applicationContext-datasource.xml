@@ -20,7 +20,7 @@
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql:///bs-blog?useSSL=false&amp;serverTimezone=UTC&amp;allowMultiQueries=true"></property>
 		<property name="username" value="root"></property>
-		<property name="password" value="你的数据库密码"></property>
+		<property name="password" value="li19971116"></property>
 		
 		<!-- 初始化大小,初始化时建立物理连接的个数,初始化发生在显式调用init方法或第一个调用getConnention时 --> 
 		<property name="initialSize" value="1" />

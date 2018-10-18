@@ -33,7 +33,7 @@ public class IndexController {
 		}
 		pageInfoUtil.setCurrentPage(page);
 		pageInfoUtil.setPageSize(20);
-		List<Article> article = articleService.getArticleBriefList(null, new HashMap<>());
+		List<Article> article = articleService.getArticleBriefList(pageInfoUtil, new HashMap<>());
 		Map<String, Integer> articleCategories = articleService.getArticleCategories();
 		Map<String, Integer> articleDate = articleService.getArticleDate();
 		model.addAttribute("articles", article);

@@ -7,15 +7,16 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
 	<title>博客首页-悦来</title>
+	<meta name="keywords" content="Java程序开发，数据库使用，MySQL，JavaWeb，软件使用，程序开发">
+	<meta name="description" content="个人博客，专注于Java程序开发，软件使用，各种网络技术">
 	<link rel="stylesheet" href="${rootPath }/static/bootstrap/css/bootstrap.min.css">
 	<style type="text/css" media="screen">
 		@media (min-width: 992px) {
 			.sidebar-fixd{
-				position: fixed;
+				/* position: fixed;
 				left: 71%;
-				width: 262px;
+				width: 262px; */
 			}
 		}
 	</style>
@@ -35,7 +36,7 @@
     </div>
     <div class="navbar-collapse collapse" role="navigation" aria-expanded="false" style="height: 1px;">
       <ul class="nav navbar-nav">
-        <li><a href="${rootPath }/">Blog</a></li>
+        <li><a href="${rootPath }/">Blog首页</a></li>
         <li><a href="https://gitee.com/xizi110" target="_blank">gitee</a></li>
        <!-- <li><a href="" target="_blank">Bootstrap4中文文档</a></li> -->
        <!-- <li><a href="" target="_blank">Less 教程</a></li> -->
@@ -64,6 +65,44 @@
 				  </p>
 				</div>
 			</c:forEach>
+			<c:if test="${page!=null&&page.totalPage>1 }">
+			<nav aria-label="Page navigation" style="text-align: center;">
+			  <ul class="pagination pagination-lg" style="margin: 0 ;">
+			  <c:if test="${page.currentPage==page.prePage }">
+			    <li class="disabled">
+			        <span aria-hidden="true">&laquo;</span>
+			    </li>
+			  </c:if>
+			  <c:if test="${page.currentPage>page.prePage }">
+			  	<li>
+			  		<a href="${rootPath }/index.html?page=${page.prePage }"><span aria-hidden="true">&laquo;</span></a>
+			    </li>
+			  </c:if>
+			  <c:set var="end" value="${page.totalPage>5?(page.currentPage>3?page.currentPage+2>page.totalPage?page.totalPage:page.currentPage+2 : 5):page.totalPage}"></c:set>
+			  <c:set var="begin" value="${page.totalPage>5?(page.currentPage>3?(end==page.totalPage?end-4:page.currentPage-2):1): 1}"></c:set>
+			  <c:forEach begin="${begin }" end="${end }" var="size">
+			  	<c:if test="${page.currentPage==size }">
+				    <li class="disabled"><span>${size }</span></li>
+			  	</c:if>
+			  	<c:if test="${page.currentPage!=size }">
+				    <li><a href="${rootPath }/index.html?page=${size }">${size }</a></li>
+				</c:if>
+			  </c:forEach>
+			  <c:if test="${page.currentPage==page.nextPage }">
+			    <li class="disabled">
+			       <span aria-hidden="true">&raquo;</span>
+			    </li>
+			  </c:if>
+			  <c:if test="${page.currentPage!=page.nextPage }">
+			  	<li>
+			      <a href="${rootPath }/index.html?page=${page.nextPage }" aria-label="Next">
+			        <span aria-hidden="true">&raquo;</span>
+			      </a>
+			    </li>
+			  </c:if>
+			  </ul>
+			</nav>
+			</c:if>
 			</div>
 
 			<div class="col-md-3 sidebar-fixd"><!-- 侧边栏 -->
@@ -94,6 +133,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<script src="${rootPath }/static/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script src="${rootPath }/static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </body>
